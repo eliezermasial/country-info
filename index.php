@@ -1,3 +1,20 @@
+<?php
+
+$data = curl_init($url='https://restcountries.com/v3.1/all');
+curl_setopt($data, CURLOPT_SSL_VERIFYPEER,false);
+curl_setopt($data, CURLOPT_RETURNTRANSFER,true);
+$apiResult=curl_exec($data);
+
+if($apiResult=== false){
+
+    var_dump(curl_error($data));
+  
+  }else{
+        $apiResult= json_decode($apiResult,true);
+  }
+curl_close($data);
+?>
+
 <!DOCTYPE html>
 <html>
 
@@ -75,51 +92,21 @@
 
   <!-- trainer section -->
 
-  <section class="trainer_section layout_padding">
+  <section class="trainer_section layout_padding pt-5 pb-5">
     <div class="container">
-      <div class="heading_container">
-        <h2>
-          Our Gym Trainers
-        </h2>
-      </div>
-      <div class="row">
-        <div class="col-lg-4 col-md-6 mx-auto">
+      
+      <div class="row " >
+      <?php foreach($apiResult as $pays) : ;?>
+        <div class="col-lg-4 mx-auto ">
+          
           <div class="box">
-            <div class="name">
-              <h5>
-                Smirth Jon
-              </h5>
-            </div>
-            <div class="img-box">
-              <img src="images/t1.jpg" alt="">
-            </div>
-            
+            <div class="img-box " style="background-color: green;">
+              <img src="<?= $pays["flags"]["png"];?>" class="img-thumbnail h-100"  alt="">
+            </div>           
           </div>
+          
         </div>
-        <div class="col-lg-4 col-md-6 mx-auto">
-          <div class="box">
-            <div class="name">
-              <h5>
-                Jean Doe
-              </h5>
-            </div>
-            <div class="img-box">
-              <img src="images/t2.jpg" alt="">
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-4 col-md-6 mx-auto">
-          <div class="box">
-            <div class="name">
-              <h5>
-                Alex Den
-              </h5>
-            </div>
-            <div class="img-box">
-              <img src="images/t3.jpg" alt="">
-            </div>
-          </div>
-        </div>
+        <?php endforeach;?>
       </div>
     </div>
   </section>

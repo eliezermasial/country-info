@@ -7,7 +7,7 @@ body {
 
 /*header section*/
 .hero_area {
-  height: 100vh;
+ 
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -15,13 +15,10 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  background-image: url(../images/hero-bg.jpg);
-  background-size: cover;
-  background-attachment: fixed;
+          background-color: #404040;
 }
 
 .header_section .container-fluid {
-  background-color: green;
   padding-right: 25px;
   padding-left: 25px;
 }
@@ -55,7 +52,7 @@ body {
 
 .custom_nav-container.navbar-expand-lg .navbar-nav .nav-item.active a::after, .custom_nav-container.navbar-expand-lg .navbar-nav .nav-item:hover a::after {
   display: block;
-  background-color: #ff2953;
+  background-color: #c5aa6a;
 }
 
 a,
@@ -136,9 +133,7 @@ a:focus {
 
 /* trainer section*/
 .trainer_section {
-  background-image: url(../images/trainer-bg.jpg);
-  background-size: cover;
-  background-attachment: fixed;
+  background-color: #c5aa6a;
   color: #ffffff;
 }
 
@@ -163,7 +158,6 @@ a:focus {
 }
 
 .trainer_section .box .img-box {
-  border-radius: 15px;
   overflow: hidden;
 }
 
@@ -171,23 +165,9 @@ a:focus {
   width: 100%;
 }
 
-.trainer_section .box .social_box {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  width: 225px;
-  padding: 12px 45px;
-  background-color: #ffffff;
-  border-radius: 50px;
-  margin-top: -25px;
-}
-
 /* info_section*/
 .info_section {
-  background-color: #252233;
+  background-color: #404040;
 }
 
 .info_items {
@@ -251,9 +231,10 @@ a:focus {
 
 /* footer section*/
 .footer_section {
-  background-color: #fbfdfd;
+  background-color: #FFFF;
   padding: 20px;
   font-weight: 500;
+  bottom: 0;
 }
 
 .footer_section p {
